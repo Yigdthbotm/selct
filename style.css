@@ -1,0 +1,67 @@
+/* Mengatur dasar halaman */
+body {
+    background-color: #000000; /* Background hitam pekat */
+    color: #ffffff; /* Warna teks default putih */
+    font-family: Arial, sans-serif; /* Jenis font (bisa diganti) */
+    margin: 0; /* Menghilangkan margin bawaan browser */
+    padding: 0; /* Menghilangkan padding bawaan browser */
+}
+
+/* Mengatur bagian header (nama store & desk) */
+.store-header {
+    text-align: center; /* Teks rata tengah */
+    padding: 30px 15px; /* Jarak di dalam header (atas/bawah 30px, kiri/kanan 15px) */
+}
+
+.store-header h1 {
+    margin: 0 0 5px 0; /* Margin bawah untuk H1 */
+    font-size: 2.5em; /* Ukuran font nama store (bisa disesuaikan) */
+}
+
+.store-header p {
+    margin: 0; /* Hapus margin untuk deskripsi */
+    font-size: 1.1em; /* Ukuran font deskripsi */
+    color: #cccccc; /* Warna abu-abu terang untuk deskripsi (opsional) */
+}
+
+/* Mengatur grid untuk kotak-kotak putih */
+.product-grid {
+    display: grid;
+    /* Membuat 2 kolom dengan lebar yang sama */
+    grid-template-columns: repeat(2, 1fr);
+    /* Jarak antar kotak (vertikal dan horizontal) */
+    gap: 20px;
+    /* Jarak antara grid dengan tepi layar */
+    padding: 20px;
+    /* Batasi lebar maksimum grid agar tidak terlalu lebar di layar besar (opsional) */
+    max-width: 900px;
+    /* Tengahkan grid di halaman (opsional) */
+    margin: 20px auto;
+}
+
+/* Mengatur tampilan setiap kotak putih */
+.grid-item {
+    background-color: #ffffff; /* Warna kotak putih */
+    height: 200px; /* Tinggi kotak (sesuaikan sesuai kebutuhan) */
+    /* Anda bisa menambahkan gaya lain di sini, misal: */
+    /* border-radius: 8px; (untuk sudut agak melengkung) */
+    /* display: flex; align-items: center; justify-content: center; (untuk menengahkan konten di dalam kotak) */
+}
+
+/* Penyesuaian untuk layar kecil (Responsive Design) */
+@media (max-width: 600px) {
+    .product-grid {
+        /* Ubah menjadi 1 kolom jika lebar layar 600px atau kurang */
+        grid-template-columns: 1fr;
+        padding: 15px; /* Kurangi padding di layar kecil */
+        gap: 15px; /* Kurangi jarak antar kotak */
+    }
+
+    .store-header h1 {
+        font-size: 2em; /* Kecilkan font judul di layar kecil */
+    }
+
+     .grid-item {
+        height: 150px; /* Kurangi tinggi kotak di layar kecil */
+    }
+}
